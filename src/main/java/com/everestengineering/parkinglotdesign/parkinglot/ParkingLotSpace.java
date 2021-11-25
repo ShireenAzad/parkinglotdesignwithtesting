@@ -26,5 +26,11 @@ public class ParkingLotSpace {
         return id;
     }
 
+    public List<ArrayList<String>> createParkingLot() {
+        FloorsInParkingLot floorsInParkingLot = new FloorsInParkingLot();
+        List<ArrayList<String>> vehiclesData = floorsInParkingLot.createFloors();
+        //System.out.println("Created parking lot with " + floors + " floors and " + slots + " slots per floor");
+        return vehiclesData;
+    }
 }
 
