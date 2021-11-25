@@ -8,6 +8,8 @@ public class FloorsInParkingLot {
         List<ArrayList<String>> vehiclesData = new ArrayList<>();
         for (int i = 0; i < ParkingLotSpace.getFloors(); ++i)
             vehiclesData.add(new ArrayList<>());
+        SlotsForEachFloor slots = new SlotsForEachFloor(vehiclesData);
+        vehiclesData = slots.createSlots();
         return vehiclesData;
     }
 }
