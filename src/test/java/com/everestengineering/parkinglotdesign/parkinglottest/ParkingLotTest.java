@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ParkingLotTest {
     static List<ArrayList<String>> vehiclesData;
+    LinkedHashMap<String, String> ticketsData = new LinkedHashMap<>();
     @BeforeAll
     public static  void creatingParkingLotTesting()
     {
@@ -24,7 +26,7 @@ public class ParkingLotTest {
     @Test
     public void parkVehicle()
     {
-        ParkingLot parkingLot = new ParkingLot(vehiclesData);
+        ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
         parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
         assertEquals((vehiclesData.get(0).get(3)),("CAR is parked"),"Car is parked successfully.");
         assertNotEquals((vehiclesData.get(0).get(4)),("CAR is parked"),"Car slot is empty.");
