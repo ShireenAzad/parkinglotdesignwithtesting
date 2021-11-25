@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ParkingLotTest {
     static List<ArrayList<String>> vehiclesData;
-    LinkedHashMap<String, String> ticketsData = new LinkedHashMap<>();
+    static LinkedHashMap<String, String> ticketsData = new LinkedHashMap<>();
     @BeforeAll
     public static  void creatingParkingLotTesting()
     {
@@ -36,6 +36,15 @@ public class ParkingLotTest {
         parkingLot.parkVehicle("TRUCK","KA-32-SJ-5389 ","ORANGE");
         assertEquals((vehiclesData.get(0).get(0)),("TRUCK is parked"),"Truck is parked successfully.");
         assertNotEquals((vehiclesData.get(1).get(0)),("TRUCK is parked"),"Truck slot is empty.");
+
+    }
+    @Test
+    public void unParkVehicle()
+    {
+        ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
+        parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
+        vehiclesData = parkingLot.unparkVehicle("PR1234_1_4");
+        assertEquals((vehiclesData.get(0).get(3)),("CAR"),"Car is un parked successfully");
 
     }
 

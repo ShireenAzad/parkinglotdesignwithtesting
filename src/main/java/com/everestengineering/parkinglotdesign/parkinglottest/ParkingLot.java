@@ -32,4 +32,10 @@ public class ParkingLot {
     }
 
 
+    public List<ArrayList<String>> unparkVehicle(String ticketId) {
+        String[] vehiclePosition = ticketId.split("_");
+        String[] vehicleType = (vehiclesData.get(Integer.parseInt(vehiclePosition[1]) - 1).get(Integer.parseInt(vehiclePosition[2]) - 1)).split(" ");
+        vehiclesData.get(Integer.parseInt(vehiclePosition[1]) - 1).set(Integer.parseInt(vehiclePosition[2]) - 1, vehicleType[0]);
+        return vehiclesData;
+    }
 }
