@@ -19,11 +19,12 @@ public class ParkingLotValidationTest {
     public void checkingIsParkingLotFull()
     {
         ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
-        parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
-        parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
-        parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
-        parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
-        parkingLot.parkVehicle("CAR","KA-01-DB-1541","RED");
+        Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
+        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
         ParkingLotValidation parkingLotCreationValidation=new ParkingLotValidation(vehiclesData);
         boolean parkingLotFull=parkingLotCreationValidation.isParkingLotFull("CAR");
         assertEquals(parkingLotFull,true,"parking lot is full");
