@@ -1,4 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.parkinglotfunctions;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,7 +7,7 @@ import java.util.List;
 public class ParkingLotValidation {
     private final List<ArrayList<String>> vehiclesData;
 
-    ParkingLotValidation(List<ArrayList<String>> vehiclesData) {
+    public ParkingLotValidation(List<ArrayList<String>> vehiclesData) {
         this.vehiclesData = vehiclesData;
 
     }

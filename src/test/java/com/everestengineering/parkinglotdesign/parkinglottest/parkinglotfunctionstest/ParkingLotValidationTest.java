@@ -1,23 +1,32 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest;
 
-import com.everestengineering.parkinglotdesign.parkinglot.ParkingLotSpace;
+import com.everestengineering.parkinglotdesign.parkinglotcreation.ParkingLotSpace;
+import com.everestengineering.parkinglotdesign.parkinglotfunctions.ParkingLot;
+import com.everestengineering.parkinglotdesign.parkinglotfunctions.ParkingLotValidation;
+import com.everestengineering.parkinglotdesign.vehicles.Vehicle;
+import com.everestengineering.parkinglotdesign.vehicles.VehicleType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.everestengineering.parkinglotdesign.parkinglottest.ParkingLotTest.vehiclesData;
-import static com.everestengineering.parkinglotdesign.parkinglottest.ParkingLotTest.ticketsData;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.TicketTest.vehiclesData;
+import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.ticketsData;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParkingLotValidationTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
-        vehiclesData = plot.createParkingLot();
+       vehiclesData = plot.createParkingLot();
     }
 
     @Test
     public void checkingIsParkingLotFull()
     {
+
         ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
         Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
         parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");

@@ -1,5 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
-
+package com.everestengineering.parkinglotdesign.vehicles;
 public enum VehicleType {
     TRUCK {
         public Vehicle createVehicle() {

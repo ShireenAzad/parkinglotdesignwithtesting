@@ -1,6 +1,7 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.parkinglotfunctions;
 
-import com.everestengineering.parkinglotdesign.parkinglot.ParkingLotSpace;
+import com.everestengineering.parkinglotdesign.parkinglotcreation.ParkingLotSpace;
+import com.everestengineering.parkinglotdesign.vehicles.Vehicle;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

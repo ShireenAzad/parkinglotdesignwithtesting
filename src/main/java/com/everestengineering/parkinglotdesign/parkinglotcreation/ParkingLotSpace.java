@@ -1,4 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglot;
+package com.everestengineering.parkinglotdesign.parkinglotcreation;
 
 import java.util.ArrayList;
 import java.util.List;

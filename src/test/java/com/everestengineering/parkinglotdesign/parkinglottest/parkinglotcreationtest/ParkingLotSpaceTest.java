@@ -1,6 +1,6 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.parkinglottest.parkinglotcreationtest;
 
-import com.everestengineering.parkinglotdesign.parkinglot.ParkingLotSpace;
+import com.everestengineering.parkinglotdesign.parkinglotcreation.ParkingLotSpace;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.parkinglotfunctions;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

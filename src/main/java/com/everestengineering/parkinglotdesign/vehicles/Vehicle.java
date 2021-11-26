@@ -1,4 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.vehicles;
 
 public interface Vehicle {
 

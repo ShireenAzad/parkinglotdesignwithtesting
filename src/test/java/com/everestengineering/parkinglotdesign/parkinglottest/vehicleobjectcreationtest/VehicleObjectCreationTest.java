@@ -1,5 +1,7 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.parkinglottest.vehicleobjectcreationtest;
 
+import com.everestengineering.parkinglotdesign.vehicles.Vehicle;
+import com.everestengineering.parkinglotdesign.vehicles.VehicleType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;

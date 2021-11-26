@@ -1,4 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglottest;
+package com.everestengineering.parkinglotdesign.vehicles;
 
 public class Truck implements Vehicle {
     public String vehicleRegistrationNumber(String truckRegistrationNumber) {
