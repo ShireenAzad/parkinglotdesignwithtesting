@@ -22,7 +22,7 @@ public class ParkingLotTest {
     public static  void creatingParkingLotTesting()
     {
         ParkingLotSpace plot = new ParkingLotSpace("PR123",2,6);
-         vehiclesData=plot.createParkingLot();
+         vehiclesData=plot.createParkingLot(2, 6);
         assertEquals(vehiclesData.size(),2,"Floor objects are created in lot");
         assertEquals(vehiclesData.get(0).size(),6,"Slot objects are created in each floor");
     }

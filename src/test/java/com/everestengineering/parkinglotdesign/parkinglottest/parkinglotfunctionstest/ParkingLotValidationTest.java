@@ -8,10 +8,6 @@ import com.everestengineering.parkinglotdesign.vehicles.VehicleType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-
 import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.TicketTest.vehiclesData;
 import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.ticketsData;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +16,7 @@ public class ParkingLotValidationTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
-       vehiclesData = plot.createParkingLot();
+       vehiclesData = plot.createParkingLot(2,5);
     }
 
     @Test

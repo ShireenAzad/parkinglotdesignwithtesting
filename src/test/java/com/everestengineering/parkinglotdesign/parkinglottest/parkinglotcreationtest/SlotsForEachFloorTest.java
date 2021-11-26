@@ -14,10 +14,10 @@ public class SlotsForEachFloorTest {
     public void slotsCreationTesting()
     {
         ParkingLotSpace plot = new ParkingLotSpace("PR123", 2, 6);
-        List<ArrayList<String>> floors=plot.createParkingLot();
+        List<ArrayList<String>> floors=plot.createParkingLot(2,6);
         assertEquals(floors.get(0).size(),6,"Slot objects are created successfully.");
         ParkingLotSpace plot1 = new ParkingLotSpace("PR123", 2, 4);
-        List<ArrayList<String>> floors1=plot.createParkingLot();
+        List<ArrayList<String>> floors1=plot.createParkingLot(2,4);
         assertNotEquals(floors.get(0).size(),4,"Slot objects are not created successfully in each floor.");
     }
 }

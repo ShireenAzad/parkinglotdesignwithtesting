@@ -22,7 +22,7 @@ public class DisplayCarValidationTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
-        vehiclesData = plot.createParkingLot();
+        vehiclesData = plot.createParkingLot(2,5);
         ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
         Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
         parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");

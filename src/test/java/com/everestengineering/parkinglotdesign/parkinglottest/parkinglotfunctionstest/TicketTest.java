@@ -22,7 +22,7 @@ public class TicketTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 6);
-        vehiclesData = plot.createParkingLot();
+        vehiclesData = plot.createParkingLot(2,6);
     }
 
     @Test

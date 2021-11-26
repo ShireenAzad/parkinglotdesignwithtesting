@@ -20,7 +20,8 @@ public class DisplayVehicleDataInEachFloor {
         for (DisplayType type : DisplayType.values())
         {
             String  Type=type.toString();
-            if(Type.equals(command))
+
+
             {
                 displayData.display(vehicleType,vehiclesData);
                 return;

@@ -26,10 +26,10 @@ public class ParkingLotSpace {
         return id;
     }
 
-    public List<ArrayList<String>> createParkingLot() {
+    public List<ArrayList<String>> createParkingLot(int floors, int slots) {
         FloorsInParkingLot floorsInParkingLot = new FloorsInParkingLot();
         List<ArrayList<String>> vehiclesData = floorsInParkingLot.createFloors();
-        //System.out.println("Created parking lot with " + floors + " floors and " + slots + " slots per floor");
+        System.out.println("Created parking lot with " + floors + " floors and " + slots + " slots per floor");
         return vehiclesData;
     }
 }
