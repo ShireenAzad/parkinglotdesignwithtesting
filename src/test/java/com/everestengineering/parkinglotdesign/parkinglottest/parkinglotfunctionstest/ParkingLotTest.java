@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ParkingLotTest {
     static List<ArrayList<String>> vehiclesData;
-    static LinkedHashMap<String, String> ticketsData = new LinkedHashMap<>();
+    public static LinkedHashMap<String, String> ticketsData = new LinkedHashMap<>();
     @BeforeAll
     public static  void creatingParkingLotTesting()
     {
