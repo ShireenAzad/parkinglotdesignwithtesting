@@ -1,4 +1,4 @@
-package com.everestengineering.parkinglotdesign.parkinglottest.displayobjectcreationtest;
+package com.everestengineering.parkinglotdesign.parkinglottest.displayfunctiontest;
 
 import com.everestengineering.parkinglotdesign.display.Display;
 import com.everestengineering.parkinglotdesign.display.DisplayType;
