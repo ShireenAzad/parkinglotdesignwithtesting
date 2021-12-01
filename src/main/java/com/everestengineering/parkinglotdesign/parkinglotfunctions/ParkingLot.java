@@ -36,18 +36,18 @@ public class ParkingLot {
     }
 
     public List<ArrayList<String>> unparkVehicle(String ticketId) {
-            Ticket ticket = new Ticket(ticketsData);
-            String[] ticketData = ticket.removeTicket(ticketId);
-            if (ticketData.length== 0) {
-                System.out.println("Invalid Ticket");
-                return vehiclesData;
-            }
-            String[] vehiclePosition = ticketId.split("_");
-            String[] vehicleDetails = ticketData[1].split(" ");
-            String[] vehicleType = (vehiclesData.get(Integer.parseInt(vehiclePosition[1]) - 1).get(Integer.parseInt(vehiclePosition[2]) - 1)).split(" ");
-            vehiclesData.get(Integer.parseInt(vehiclePosition[1]) - 1).set(Integer.parseInt(vehiclePosition[2]) - 1, vehicleType[0]);
-            System.out.println("Unparked vehicle with Registration Number: " + vehicleDetails[0] + " and Color: " + vehicleDetails[1]);
+        Ticket ticket = new Ticket(ticketsData);
+        String[] ticketData = ticket.removeTicket(ticketId);
+        if (ticketData.length == 0) {
+            System.out.println("Invalid Ticket");
             return vehiclesData;
+        }
+        String[] vehiclePosition = ticketId.split("_");
+        String[] vehicleDetails = ticketData[1].split(" ");
+        String[] vehicleType = (vehiclesData.get(Integer.parseInt(vehiclePosition[1]) - 1).get(Integer.parseInt(vehiclePosition[2]) - 1)).split(" ");
+        vehiclesData.get(Integer.parseInt(vehiclePosition[1]) - 1).set(Integer.parseInt(vehiclePosition[2]) - 1, vehicleType[0]);
+        System.out.println("Unparked vehicle with Registration Number: " + vehicleDetails[0] + " and Color: " + vehicleDetails[1]);
+        return vehiclesData;
 
     }
 }

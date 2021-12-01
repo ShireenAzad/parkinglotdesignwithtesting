@@ -10,9 +10,9 @@ public class InputValidations {
         String initialCommand = "create_parking_lot";
         if (inputCommand.size() == 0) {
             if (commands.startsWith(initialCommand)) {
-                ParkingLotCreationValidation parkingLotCreationValidation=new ParkingLotCreationValidation(commands);
-                commands=parkingLotCreationValidation.validation();
-                if (commands.length()!=0) {
+                ParkingLotCreationValidation parkingLotCreationValidation = new ParkingLotCreationValidation(commands);
+                commands = parkingLotCreationValidation.validation();
+                if (commands.length() != 0) {
                     inputCommand.add(commands);
                     return commands;
                 }

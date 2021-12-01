@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class DisplayFreeSlots  implements Display{
+class DisplayFreeSlots implements Display {
     public void display(String vehicleType, List<ArrayList<String>> vehiclesData) {
         for (int i = 0; i < vehiclesData.size(); i++) {
             List<Integer> freeSlots = new ArrayList<>();

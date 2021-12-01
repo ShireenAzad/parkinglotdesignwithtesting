@@ -16,25 +16,24 @@ public class ParkingLotValidationTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
-       vehiclesData = plot.createParkingLot(2,5);
+        vehiclesData = plot.createParkingLot(2, 5);
     }
 
     @Test
-    public void checkingIsParkingLotFull()
-    {
+    public void checkingIsParkingLotFull() {
 
-        ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
+        ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
         Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
-        ParkingLotValidation parkingLotCreationValidation=new ParkingLotValidation(vehiclesData);
-        boolean parkingLotFull=parkingLotCreationValidation.isParkingLotFull("CAR");
-        assertEquals(parkingLotFull,true,"parking lot is full");
-        parkingLotFull=parkingLotCreationValidation.isParkingLotFull("BIKE");
-        assertEquals(parkingLotFull,false,"There is slot to park the vehicle");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        ParkingLotValidation parkingLotCreationValidation = new ParkingLotValidation(vehiclesData);
+        boolean parkingLotFull = parkingLotCreationValidation.isParkingLotFull("CAR");
+        assertEquals(parkingLotFull, true, "parking lot is full");
+        parkingLotFull = parkingLotCreationValidation.isParkingLotFull("BIKE");
+        assertEquals(parkingLotFull, false, "There is slot to park the vehicle");
 
     }
 }

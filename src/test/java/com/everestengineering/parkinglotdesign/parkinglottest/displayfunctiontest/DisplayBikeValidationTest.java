@@ -23,10 +23,11 @@ public class DisplayBikeValidationTest {
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
         vehiclesData = plot.createParkingLot(2, 5);
-        ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
+        ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
         Vehicle vehicle = VehicleType.valueOf("BIKE").createVehicle();
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
     }
+
     @Test
     public void checkingDisplayValidation() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("free_count", "BIKE", vehiclesData);
@@ -39,6 +40,7 @@ public class DisplayBikeValidationTest {
 
 
     }
+
     @Test
     public void checkingDisplayOfFreeSlots() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("free_slots", "BIKE", vehiclesData);
@@ -49,6 +51,7 @@ public class DisplayBikeValidationTest {
         verify(out).println(contains("Free slots for BIKE on Floor 1:3"));
         verify(out).println(contains("Free slots for BIKE on Floor 2:2,3"));
     }
+
     @Test
     public void checkingDisplayOfOccupiedSlots() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("occupied_slots", "BIKE", vehiclesData);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class DisplayOccupiedSlots implements Display{
+class DisplayOccupiedSlots implements Display {
     public void display(String vehicleType, List<ArrayList<String>> vehiclesData) {
         for (int i = 0; i < vehiclesData.size(); i++) {
             List<Integer> occupiedSlots = new ArrayList<>();

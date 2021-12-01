@@ -22,11 +22,12 @@ public class DisplayTruckValidationTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
-        vehiclesData = plot.createParkingLot(2,5);
-        ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
+        vehiclesData = plot.createParkingLot(2, 5);
+        ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
         Vehicle vehicle = VehicleType.valueOf("TRUCK").createVehicle();
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
     }
+
     @Test
     public void checkingDisplayValidation() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("free_count", "TRUCK", vehiclesData);
@@ -39,6 +40,7 @@ public class DisplayTruckValidationTest {
 
 
     }
+
     @Test
     public void checkingDisplayOfFreeSlots() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("free_slots", "TRUCK", vehiclesData);
@@ -49,6 +51,7 @@ public class DisplayTruckValidationTest {
         verify(out).println(contains("Free slots for TRUCK on Floor 1:"));
         verify(out).println(contains("Free slots for TRUCK on Floor 2:1"));
     }
+
     @Test
     public void checkingDisplayOfOccupiedSlots() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("occupied_slots", "TRUCK", vehiclesData);
