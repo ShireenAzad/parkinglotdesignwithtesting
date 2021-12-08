@@ -14,8 +14,9 @@ public class ParkingLotValidation {
 
     public boolean isParkingLotFull(String vehicleType) {
         int count = 0;
-        for (ArrayList<String> i : vehiclesData)
+        for (ArrayList<String> i : vehiclesData) {
             count += Collections.frequency(i, vehicleType);
+        }
         if (count == 0) {
             System.out.println("Parking Lot Full");
             return true;

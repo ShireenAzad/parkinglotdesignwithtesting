@@ -12,7 +12,7 @@ class ParkingLotSpaceTest {
     public void getFloors() {
         ParkingLotSpace plot = new ParkingLotSpace("PR123", 2, 6);
 
-        assertEquals(plot.getFloors(), 2, "number of floors in parking lot are fetched successfully.");
+        assertEquals(ParkingLotSpace.getFloors(), 2, "number of floors in parking lot are fetched successfully.");
 
     }
 
@@ -20,7 +20,7 @@ class ParkingLotSpaceTest {
     public void getSlots() {
         ParkingLotSpace plot = new ParkingLotSpace("PR123", 2, 6);
 
-        assertEquals(plot.getSlots(), 6, "number of slots in each floor are fetched successfully");
+        assertEquals(ParkingLotSpace.getSlots(), 6, "number of slots in each floor are fetched successfully");
     }
 
 }

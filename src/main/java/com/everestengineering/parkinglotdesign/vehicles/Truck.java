@@ -1,13 +1,22 @@
 package com.everestengineering.parkinglotdesign.vehicles;
 
 public class Truck implements Vehicle {
-    public String vehicleRegistrationNumber(String truckRegistrationNumber) {
+
+    private String truckRegistrationNumber;
+    private String truckColor;
+
+    public Truck(String truckRegistrationNumber, String truckColor) {
+        this.truckRegistrationNumber=truckRegistrationNumber;
+        this.truckColor=truckColor;
+    }
+
+    @Override
+    public String getVehicleRegistrationNumber() {
         return truckRegistrationNumber;
     }
 
     @Override
-    public String vehicleColor(String truckColor) {
+    public String getVehicleColor() {
         return truckColor;
-
     }
 }

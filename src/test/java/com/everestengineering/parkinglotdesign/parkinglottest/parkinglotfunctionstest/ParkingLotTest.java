@@ -16,8 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ParkingLotTest {
-    static List<ArrayList<String>> vehiclesData;
-    public static LinkedHashMap<String, String> ticketsData = new LinkedHashMap<>();
+    public static List<ArrayList<String>> vehiclesData;
+    public static LinkedHashMap<String, Vehicle> ticketsData = new LinkedHashMap<>();
 
     @BeforeAll
     public static void creatingParkingLotTesting() {
@@ -30,16 +30,16 @@ public class ParkingLotTest {
     @Test
     public void parkVehicle() {
         ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
-        Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        Vehicle vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
         assertEquals((vehiclesData.get(0).get(3)), ("CAR is parked"), "Car is parked successfully.");
         assertNotEquals((vehiclesData.get(0).get(4)), ("CAR is parked"), "Car slot is empty.");
-        vehicle = VehicleType.valueOf("BIKE").createVehicle();
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1234", "RED");
+        vehicle= VehicleType.valueOf("BIKE").createVehicle( "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
         assertEquals((vehiclesData.get(0).get(1)), ("BIKE is parked"), "Bike is parked successfully.");
         assertNotEquals((vehiclesData.get(0).get(2)), ("BIKE is parked"), "Bike slot is empty.");
-        vehicle = VehicleType.valueOf("TRUCK").createVehicle();
-        parkingLot.parkVehicle(vehicle, "KA-32-SJ-5389 ", "ORANGE");
+        vehicle= VehicleType.valueOf("TRUCK").createVehicle( "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
         assertEquals((vehiclesData.get(0).get(0)), ("TRUCK is parked"), "Truck is parked successfully.");
         assertNotEquals((vehiclesData.get(1).get(0)), ("TRUCK is parked"), "Truck slot is empty.");
 
@@ -48,11 +48,12 @@ public class ParkingLotTest {
     @Test
     public void unParkVehicle() {
         ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
-        Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        Vehicle vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
         vehiclesData = parkingLot.unparkVehicle("PR123_1_4");
         assertEquals((vehiclesData.get(0).get(3)), ("CAR"), "Car is un parked successfully");
 
     }
 
-}
+    }
+

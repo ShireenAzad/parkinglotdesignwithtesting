@@ -2,13 +2,20 @@ package com.everestengineering.parkinglotdesign.vehicles;
 
 public class Bike implements Vehicle {
 
-    public String vehicleRegistrationNumber(String bikeRegistrationNumber) {
+    private String bikeRegistrationNumber;
+    private String bikeColor;
+    public Bike(String bikeRegistrationNumber,String bikeColor){
+        this.bikeRegistrationNumber=bikeRegistrationNumber;
+        this.bikeColor=bikeColor;
+
+    }
+    @Override
+    public String getVehicleRegistrationNumber() {
         return bikeRegistrationNumber;
     }
 
     @Override
-    public String vehicleColor(String bikeColor) {
+    public String getVehicleColor() {
         return bikeColor;
-
     }
 }

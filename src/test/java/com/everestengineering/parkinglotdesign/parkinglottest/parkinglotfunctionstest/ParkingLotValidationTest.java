@@ -8,8 +8,8 @@ import com.everestengineering.parkinglotdesign.vehicles.VehicleType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.TicketTest.vehiclesData;
 import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.ticketsData;
+import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.TicketTest.vehiclesData;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParkingLotValidationTest {
@@ -23,12 +23,18 @@ public class ParkingLotValidationTest {
     public void checkingIsParkingLotFull() {
 
         ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
-        Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        Vehicle vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
+        vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
+        vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
+        vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
+        vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
+        vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
         ParkingLotValidation parkingLotCreationValidation = new ParkingLotValidation(vehiclesData);
         boolean parkingLotFull = parkingLotCreationValidation.isParkingLotFull("CAR");
         assertEquals(parkingLotFull, true, "parking lot is full");

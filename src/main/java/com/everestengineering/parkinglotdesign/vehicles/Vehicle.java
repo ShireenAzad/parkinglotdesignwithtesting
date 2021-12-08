@@ -1,8 +1,9 @@
 package com.everestengineering.parkinglotdesign.vehicles;
 
+
 public interface Vehicle {
 
-    String vehicleRegistrationNumber(String registrationNumber);
+    String getVehicleRegistrationNumber();
 
-    String vehicleColor(String color);
+    String getVehicleColor();
 }

@@ -2,21 +2,20 @@ package com.everestengineering.parkinglotdesign.vehicles;
 
 public enum VehicleType {
     TRUCK {
-        public Vehicle createVehicle() {
-            return new Truck();
+        public Vehicle createVehicle(String registrationNumber,String color) {
+            return new Truck(registrationNumber,color);
         }
     },
     BIKE {
-        public Vehicle createVehicle() {
-            return new Bike();
+        public Vehicle createVehicle(String registrationNumber,String color) {
+            return new Bike(registrationNumber,color);
         }
     },
     CAR {
-        public Vehicle createVehicle() {
-            return new Car();
+        public Vehicle createVehicle(String registrationNumber,String color) {
+            return new Car(registrationNumber,color);
         }
     };
 
-    public abstract Vehicle createVehicle();
+    public abstract Vehicle createVehicle(String registrationNumber,String color);
 };
-

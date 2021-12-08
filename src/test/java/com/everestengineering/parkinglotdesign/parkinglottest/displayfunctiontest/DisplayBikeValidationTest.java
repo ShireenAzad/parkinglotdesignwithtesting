@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.io.PrintStream;
 
 import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.ticketsData;
-import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.TicketTest.vehiclesData;
+import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.vehiclesData;
 import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -24,8 +24,8 @@ public class DisplayBikeValidationTest {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
         vehiclesData = plot.createParkingLot(2, 5);
         ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
-        Vehicle vehicle = VehicleType.valueOf("BIKE").createVehicle();
-        parkingLot.parkVehicle(vehicle, "KA-01-DB-1541", "RED");
+        Vehicle vehicle= VehicleType.valueOf("BIKE").createVehicle( "KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
     }
 
     @Test
