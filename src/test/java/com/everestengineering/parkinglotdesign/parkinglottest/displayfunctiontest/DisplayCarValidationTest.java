@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.io.PrintStream;
 
 import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.ticketsData;
-import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.TicketTest.vehiclesData;
+import static com.everestengineering.parkinglotdesign.parkinglottest.parkinglotfunctionstest.ParkingLotTest.vehiclesData;
 import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -22,11 +22,12 @@ public class DisplayCarValidationTest {
     @BeforeAll
     public static void creatingParkingLotTesting() {
         ParkingLotSpace plot = new ParkingLotSpace("PR1234", 2, 5);
-        vehiclesData = plot.createParkingLot(2,5);
-        ParkingLot parkingLot = new ParkingLot(vehiclesData,ticketsData);
-        Vehicle vehicle = VehicleType.valueOf("CAR").createVehicle();
-        parkingLot.parkVehicle(vehicle,"KA-01-DB-1541","RED");
+        vehiclesData = plot.createParkingLot(2, 5);
+        ParkingLot parkingLot = new ParkingLot(vehiclesData, ticketsData);
+        Vehicle vehicle= VehicleType.valueOf("CAR").createVehicle("KA-01-DB-1541", "RED");
+        parkingLot.parkVehicle(vehicle);
     }
+
     @Test
     public void checkingDisplayValidation() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("free_count", "CAR", vehiclesData);
@@ -39,6 +40,7 @@ public class DisplayCarValidationTest {
 
 
     }
+
     @Test
     public void checkingDisplayOfFreeSlots() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("free_slots", "CAR", vehiclesData);
@@ -49,6 +51,7 @@ public class DisplayCarValidationTest {
         verify(out).println(contains("Free slots for CAR on Floor 1:5"));
         verify(out).println(contains("Free slots for CAR on Floor 2:4,5"));
     }
+
     @Test
     public void checkingDisplayOfOccupiedSlots() {
         DisplayVehicleDataInEachFloor displayVehicleData = new DisplayVehicleDataInEachFloor("occupied_slots", "CAR", vehiclesData);

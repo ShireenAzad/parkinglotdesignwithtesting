@@ -9,21 +9,19 @@ public class DisplayVehicleDataInEachFloor {
     private final String command;
 
     public DisplayVehicleDataInEachFloor(String command, String vehicleType, List<ArrayList<String>> vehiclesData) {
-        this.command=command;
-        this.vehicleType=vehicleType;
-        this.vehiclesData=vehiclesData;
+        this.command = command;
+        this.vehicleType = vehicleType;
+        this.vehiclesData = vehiclesData;
     }
 
-    public void displayVehicleDataInEachFloor(Display displayData)
-    {
+    public void displayVehicleDataInEachFloor(Display displayData) {
         String displayType = displayData.getClass().getSimpleName().toUpperCase();
-        for (DisplayType type : DisplayType.values())
-        {
-            String  Type=type.toString();
+        for (DisplayType type : DisplayType.values()) {
+            String Type = type.toString();
 
 
             {
-                displayData.display(vehicleType,vehiclesData);
+                displayData.display(vehicleType, vehiclesData);
                 return;
             }
 
